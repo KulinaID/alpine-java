@@ -5,6 +5,9 @@ MAINTAINER dnoor@kulina.id
 
 ENV TERM=dumb
 
+# Patch APK Mirror to YKode
+RUN echo "https://alpine.ykode.com/alpine/v3.2/main" > /etc/apk/repositories
+
 # Install curl
 RUN apk --update add curl ca-certificates tar unzip && \
    curl -Ls https://circle-artifacts.com/gh/andyshinn/alpine-pkg-glibc/6/artifacts/0/home/ubuntu/alpine-pkg-glibc/packages/x86_64/glibc-2.21-r2.apk > /tmp/glibc-2.21-r2.apk && \
